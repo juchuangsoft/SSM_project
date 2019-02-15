@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
     <script type="text/javascript" src="static/js/jquery.min.js"></script>
     <link  rel="stylesheet" href="static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -16,7 +17,12 @@
 
 </head>
 <body>
-<button class="btn btn-success">按 钮</button>
-
+<div class="container">
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+</div>
 </body>
 </html>
