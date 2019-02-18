@@ -6,7 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<jsp:forward page="/emps"></jsp:forward>
+<%--<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
@@ -25,4 +26,4 @@
     </ul>
 </div>
 </body>
-</html>
+</html>--%>

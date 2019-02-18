@@ -33,11 +33,17 @@
     </bean>
 
     <!--配置扫描器，将mybatis接口的实现加入到IOC容器中-->
-    <!--<com.juchuang.bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        &lt;!&ndash;扫描所有dao接口的实现，加入到IOC容器中&ndash;&gt;
-        <property name="basePackage" value="com.juchuang.dao.mapper"/>
-    </com.juchuang.bean>-->
-    <mybatis:scan base-package="com.juchuang.dao"/>
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--扫描所有dao接口的实现，加入到IOC容器中-->
+        <property name="basePackage" value="com.juchuang.dao"/>
+    </bean>
+    <!--<mybatis:scan base-package="com.juchuang.dao"/>-->
+
+    <!--配置一个执行批量的sqlSession-->
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+        <constructor-arg name="executorType" value="BATCH"/>
+    </bean>
 
     <!--事务控制的配置-->
     <bean id="txManage" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
